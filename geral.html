@@ -296,7 +296,7 @@ const pegaA = params.get('a')
 
 
                 firebase.database()
-                    .ref(`/festas/${pegaA}/listas/${resultado.apelido}`)
+                    .ref(`${pegaA}/listas/${resultado.apelido}`)
                     .orderByChild('nome')
                     .once('value', (nome) => {
 
@@ -308,7 +308,7 @@ const pegaA = params.get('a')
 
 
                         firebase.database()
-                            .ref(`/festas/${pegaA}/listas/geral/ausentes`)
+                            .ref(`${pegaA}/listas/geral/ausentes`)
                             .orderByChild('promoter')
                             .equalTo(`${resultado.apelido}`)
                             .once('value', (total) => {
