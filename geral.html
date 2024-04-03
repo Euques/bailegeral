@@ -274,6 +274,7 @@ const pegaA = params.get('a')
 
         var dadosMostraRegras = ""
 
+        var parentURL = window != window.parent ? document.referrer : null;
 
         firebase.database().ref('promo/')
             .orderByChild('apelido')
