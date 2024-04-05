@@ -326,9 +326,26 @@
 const params = new URLSearchParams(search)
 const pegaA = params.get('a')
         const pegaAtr = params.get('atr')
-        const pegaFlyerEncoded = params.get('flyer');
-const pegaFlyer = decodeURIComponent(pegaFlyerEncoded.replace(/&/g, '&amp;'));
+       
         const pegaData = params.get('data')
+
+
+       const pegaFlyerEncoded = params.get('flyer');
+// Decodificar a URL do flyer
+const pegaFlyer = decodeURIComponent(pegaFlyerEncoded);
+
+// Verificar se a URL do flyer contém "&" na parte do token
+if (pegaFlyer.includes('&token=')) {
+    // Dividir a URL do flyer em duas partes: antes e depois do token
+    const partes = pegaFlyer.split('&token=');
+    // Reconstituir a URL, substituindo o "&" por sua entidade HTML correspondente apenas na primeira parte
+    const flyerCorrigido = partes[0] + '&amp;token=' + partes[1];
+    // Usar a URL do flyer corrigida
+    console.log('URL do flyer corrigida:', flyerCorrigido);
+} else {
+    // A URL do flyer não precisa de correção
+    console.log('URL do flyer:', pegaFlyer);
+}
 
 var parentURL = window != window.parent ? document.referrer : null;
 
