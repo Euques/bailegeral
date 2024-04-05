@@ -331,11 +331,11 @@ const pegaA = params.get('a')
 
 
 const pegaFlyerEncoded = params.get('flyer');
-const pegaFlyerCorrigido = pegaFlyerEncoded.replace(/&/g, '&amp;');
-const pegaFlyerDecoded = decodeURIComponent(pegaFlyerCorrigido);
+const pegaFlyer = pegaFlyerEncoded.replace(/&/g, '%26');
 
-console.log('URL do flyer corrigida:', pegaFlyerCorrigido);
-console.log('URL do flyer decodificada:', pegaFlyerDecoded);
+console.log('URL do flyer:', pegaFlyer);
+
+        
 
 var parentURL = window != window.parent ? document.referrer : null;
 
