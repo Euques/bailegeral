@@ -331,13 +331,9 @@ const pegaA = params.get('a')
 
 
 const pegaFlyerEncoded = params.get('flyer');
-const pegaFlyer = decodeURIComponent(pegaFlyerEncoded);
+const pegaFlyerDecoded = decodeURIComponent(pegaFlyerEncoded);
 
-// Verificar se a URL do flyer contém "&" na parte do token
-const flyerCorrigido = pegaFlyer.includes('&token=') ? pegaFlyer.replace(/&/g, '&amp;') : pegaFlyer;
-
-// Usar a URL do flyer corrigida
-console.log('URL do flyer:', flyerCorrigido);
+console.log('URL do flyer decodificada:', pegaFlyerDecoded);
         
 
 var parentURL = window != window.parent ? document.referrer : null;
