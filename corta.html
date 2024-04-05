@@ -326,7 +326,8 @@
 const params = new URLSearchParams(search)
 const pegaA = params.get('a')
         const pegaAtr = params.get('atr')
-        const pegaFlyer = decodeURIComponent(params.get('flyer'));
+        const pegaFlyerEncoded = params.get('flyer');
+const pegaFlyer = decodeURIComponent(pegaFlyerEncoded);
         const pegaData = params.get('data')
 
 var parentURL = window != window.parent ? document.referrer : null;
