@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="pt_BR">
 
@@ -183,15 +180,14 @@
 
 <script>
 
-  var firebaseConfig = {
-        apiKey: "AIzaSyCLEyAd_4-2n2ID0xTjwS1ouip9G9C6JDs",
-        authDomain: "blacknight-600de.firebaseapp.com",
-        databaseURL: "https://blacknight-600de.firebaseio.com",
-        projectId: "blacknight-600de",
-        storageBucket: "blacknight-600de.appspot.com",
-        messagingSenderId: "588926432348",
-        appId: "1:588926432348:web:47b2b4a1b421d4b2a0e299",
-        measurementId: "G-559VYPVJ5Q"
+var firebaseConfig = {
+apiKey: "AIzaSyCNSzDh0tC80lhoFewOCCWFgF4ec2tCqQQ",
+authDomain: "inovabarapp.firebaseapp.com",
+databaseURL: "https://inovabarapp-default-rtdb.firebaseio.com",
+projectId: "inovabarapp",
+storageBucket: "inovabarapp.appspot.com",
+messagingSenderId: "341811259005",
+appId: "1:341811259005:web:55cbc721257b0b2ff63314",
 
     };
 
@@ -280,32 +276,72 @@
         </div>
     </div>
 
-  <div id="container" class="container text-left">
+    <div id="container" class="container text-left">
         <div class="wrapper">
             <div class="inner">
                 <h4 id="text04">Olha o que vc ganha</h4>
                 <div id="" class="style1 list">
-                    <ul>
+
+                        <ul>
                         <li>
-                            <p><strong>Link da lista para convidar os amigos</strong> c/ seu nome</p>
+                            <p><strong>Reserva de 1 Bistro</strong></p>
+                        </li>
+                        <li>
+                            <p><strong>Flyer e Link virtual</strong> c/ sua foto</p>
+                        </li>
+                        <li>
+                            <p><strong>Vip para o aniversariante e Acompanhante</strong></p>
+                        </li>
+
+                        <li>
+                            <p><strong>1 Gin tônica</strong></p>
                         </li>
                         
+                    </ul>
+                </div>
+                <h4 id="" >com 15 convidados pagantes</h4>
+                <div id="" class="">
+                    <ul class="">
+                        <li >
+                            <p>1 <strong>Garrafa de (Black, ou Ciroc Red, ou Tanqueray)</strong></p>
+                        </li>
+                        <li>
+                            <p>1 <strong>Balde de Heineken</strong> long neck com 6 unidades</p>
+                        </li>
+                        <li>
+                            <p><strong>R$300 de consumação na comanda do aniversariante</strong></p>
+                        </li>
+                    </ul>
+                    
+
+                    
+                 <!--   <ul>
+                        <li>
+                            <p><strong>Reserva de um Bistro</strong></p>
+                        </li>
                         <li>
                             <p><strong>Flyer virtual</strong> c/ sua foto</p>
                         </li>
                         <li>
-                            <p><strong>Vip para o aniversariante + acompanhante</strong></p>
+                            <p><strong>Vip para o aniversariante</strong></p>
                         </li>
-                      
+                        <li>
+                            <p><strong>01 Gin tônica</strong></p>
+                        </li>
                     </ul>
                 </div>
-                <h4 id="" >com 15 convidados pagantes até 2H</h4>
+                <h4 id="" >com 20 convidados pagantes</h4>
                 <div id="" class="">
                     <ul class="">
                         <li >
-                            <p>1 <strong>Garrafa de Smirnoff ou Gim Nacional</strong></p>
-                    </ul>
+                            <p>1 <strong>Garrafa de red label</strong></p>
+                        </li>
+                        <li>
+                            <p>1 <strong>Balde de Heineken</strong> long neck com 6 unidades</p>
+                        </li>
+                    </ul> -->
                 </div>
+                <h4 id="" >*PROMOÇÃO ESPECIAL PARA ANIVERSARIANTES DE SABADO À TARDE </h4>
             </div>
         </div>
     </div>
@@ -325,9 +361,6 @@
         const { search } = window.location
 const params = new URLSearchParams(search)
 const pegaA = params.get('a')
-
-
-        
 
 var parentURL = window != window.parent ? document.referrer : null;
 
@@ -445,8 +478,10 @@ var parentURL = window != window.parent ? document.referrer : null;
                                         var data = document.getElementById('data').value
                                         var whats = document.getElementById('whats').value
 
-                                        var promo1 = "Com 15 convidados pagantes até 2H o aniversariante ganha 1 garrafa de Vodka Smirnoff ou Gin Nacional"
-                                       
+                                        var promo1 = "20 pagantes ganha uma garrafa de Red Label e 1 balde long neck Heineikey com 6 und."
+                                        var promo2 = "Com 15 pagantes, o aniversariante ganha 1 garrafa de (Black, Ciroc Red, ou Tanqueray) + R$300 de consumo na comanda + 1 Balde c/ 6 long neck Heineken.."
+                                        var promo3 = "<b>Com 15 Convidados:</b><br>Entrada VIP + Almoço (13 às 16H) + Open de Império (14 às 16H) + Flyer e Lista para convidar seus amigos.<br><br><b>Com 25 Convidados:</b><br>Entrada VIP + Acompanhante + Almoço (13 às 14H) + Open (14 às 16H) + Garrafa de Red Label + Flyer e Lista para convidar seus amigos. <br><br><b>Com 40 Convidados:</b><br>Entrada VIP + Acompanhante + Almoço (13 às 14H) + Open (14 às 16H) + Garrafa de Black ou Tanqueray + 2 Convites para o próximo Show da sua escolha + Flyer e Lista para convidar seus amigos.";
+
 
                                         firebase.database()
                                             .ref(`${pegaA}/bday/${snap.key}`)
@@ -458,11 +493,12 @@ var parentURL = window != window.parent ? document.referrer : null;
                                                     aprovado: false,
                                                     apelido: 'B-day ' + apelido,
                                                     nome: nome,
-                                                    bday: data,
-                                                
+                                                    data: data,
                                                     whats: whats,
                                                     status: 'Aniversariante',
-                                                    regra: promo1
+                                                    regra: promo2,
+                                               
+                                                    domRegra: promo1
 
                                                 }
                                             )
@@ -515,7 +551,10 @@ var parentURL = window != window.parent ? document.referrer : null;
 
     </script>
 
-  
+    <script>
+
+
+    </script>
 
 
 </body>
@@ -523,4 +562,3 @@ var parentURL = window != window.parent ? document.referrer : null;
 
 
 </html>
-
