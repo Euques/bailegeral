@@ -330,11 +330,10 @@ const pegaA = params.get('a')
         const pegaData = params.get('data')
 
 
-      const pegaFlyerEncoded = params.get('flyer');
+const pegaFlyerEncoded = params.get('flyer');
 const pegaFlyer = decodeURIComponent(pegaFlyerEncoded);
 
-// Declara a variável fora do bloco if...else e atribui um valor inicial a ela
-let flyerCorrigido = pegaFlyer;
+let flyerCorrigido; // Declaração da variável fora do bloco if...else
 
 // Verificar se a URL do flyer contém "&" na parte do token
 if (pegaFlyer.includes('&token=')) {
@@ -346,11 +345,13 @@ if (pegaFlyer.includes('&token=')) {
     console.log('URL do flyer corrigida:', flyerCorrigido);
 } else {
     // A URL do flyer não precisa de correção
+    flyerCorrigido = pegaFlyer; // Define a URL sem modificações
     console.log('URL do flyer:', pegaFlyer);
 }
 
 // Agora você pode usar a variável flyerCorrigido aqui fora do bloco if...else
 console.log('URL do flyer fora do bloco if...else:', flyerCorrigido);
+        
 
 var parentURL = window != window.parent ? document.referrer : null;
 
