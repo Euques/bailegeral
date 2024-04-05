@@ -330,8 +330,8 @@ const pegaA = params.get('a')
         const pegaData = params.get('data')
 
 
-const pegaFlyerEncoded = params.get('flyer');
-const pegaFlyer = pegaFlyerEncoded.replace(/&/g, '%26');
+const pegaFlyer = params.get('flyer').replace(/&/g, '%26');
+
 
 console.log('URL do flyer:', pegaFlyer);
 
