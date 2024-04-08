@@ -484,7 +484,7 @@ var parentURL = window != window.parent ? document.referrer : null;
 
 
                                         firebase.database()
-                                            .ref(`${pegaA}/bday/${snap.key}`)
+                                            .ref(`window.open(`${parentURL}?p=${pegaA}/bday/${snap.key}`)
                                             .set(
 
                                                 
