@@ -471,9 +471,9 @@ var parentURL = window != window.parent ? document.referrer : null;
 
                                 const base64 = avatar.src.split('base64,')[1]
                                 firebase.storage().ref(`bday${anoAtual}/${snap.key}.png`).putString(base64, 'base64', { contentType: 'image/png' }).then(snapshot => {
-                                    console.log('snapshot', snapshot)
+                                    console.log("A imagem foi salva no Storage")
 
-                                    firebase.storage().ref(`/bday${anoAtual}/${snap.key}.png`).getDownloadURL().then(url => {
+                                    firebase.storage().ref(`bday${anoAtual}/${snap.key}.png`).getDownloadURL().then(url => {
                                         console.log('endereço', url)
 
 
